@@ -4,9 +4,16 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
+    this.$button.on('click', this.renderRoom);
+
   },
 
-  render: function() {
-  }
+  renderRoom: function(roomName) {
+    //display messages for current room
+    this.$select.append('<div>' + roomName + '</div>');
+  },
 
+  addRoom: function () {
+
+  }
 };
