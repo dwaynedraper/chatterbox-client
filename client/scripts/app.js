@@ -11,6 +11,7 @@ var App = {
     RoomsView.initialize();
     MessagesView.initialize();
     Friends.initialize();
+    Rooms.initialize();
 
     // Fetch initial batch of messages
     App.startSpinner();
@@ -21,8 +22,12 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
-
+      for (let i = 0; i < data.results.length; i++) {
+        console.log('running');
+        console.log(data.results[i]);
+        MessagesView.renderMessage(data.results[i]);
+      }
+      //RoomsView.renderRoom();
       callback();
     });
   },

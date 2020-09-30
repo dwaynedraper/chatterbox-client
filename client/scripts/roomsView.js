@@ -4,16 +4,15 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    this.$button.on('click', this.renderRoom);
+    this.$button.on('click', RoomsView.renderRoom);
 
   },
 
   renderRoom: function(roomName) {
     //display messages for current room
-    this.$select.append('<div>' + roomName + '</div>');
+    console.log('this:', this);
+    RoomsView.$select.append('<div>' + roomName + '</div>');
   },
 
-  addRoom: function () {
 
-  }
 };

@@ -7,8 +7,11 @@ var Friends = {
     this.$chats.on('click', '.username', this.toggleStatus);
   },
 
-  toggleStatus: function(username) {
+  toggleStatus: function(event) {
+    let userName = event.currentTarget.innerText;
+    console.log('userName: ', userName);
     //this.friendList.push(username);
+    // this.$('#chats .username').html();
   }
 
 };
