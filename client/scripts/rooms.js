@@ -4,12 +4,17 @@ var Rooms = {
   $rooms: $('#rooms'),
 
   initialize: function() {
-    this.$rooms.on('click', 'button', this.add);
+    // this.$rooms.on('click', button, this.addRoom);
   },
 
-  add: function (event) {
-    let roomName = event.currentTarget.innerText;
-    console.log('roomName: ', roomName);
+  render: _.template(`<option> <%- roomname %> </option>`),
+
+  addRoom: function() {
+    $('#roomName').on('click', 'button', function() {
+      let roomname = $('#roomNameText').val();
+      // console.log(roomname)
+      $('#rooms select').append("<option>" + roomname + "</option>");
+    });
   }
 
 };

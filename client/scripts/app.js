@@ -12,24 +12,25 @@ var App = {
     MessagesView.initialize();
     Friends.initialize();
     Rooms.initialize();
+    Rooms.addRoom();
 
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    setInterval(App.fetch, 100);
+    setInterval(RoomsView.selectRoom, 100);
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      var html = '';
+      var toHtml = '';
       var compiled = MessageView.render;
       for (let i = 0; i < data.results.length; i++) {
         if (data.results[i].username && data.results[i].text) {
-          html += compiled(data.results[i]);
+          toHtml += compiled(data.results[i]);
         }
       }
       $('#chats').html('');
-      $('#chats').append(html);
+      $('#chats').append(toHtml);
       callback();
     });
   },

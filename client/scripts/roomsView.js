@@ -3,16 +3,27 @@ var RoomsView = {
   $button: $('#rooms button'),
   $select: $('#rooms select'),
 
+  //var rooms = _.uniq(_.pluck(data.results, 'roomname'))
+
   initialize: function() {
-    this.$button.on('click', RoomsView.renderRoom);
+    RoomsView.$select.change(RoomsView.selectRoom);
+    // this.$button.on('click', RoomsView.renderRoom);
 
   },
 
-  renderRoom: function(roomName) {
+  selectRoom: function() {
+    Parse.readAll(data => RoomsView.renderRoom(RoomsView.$select.val(), data));
+  },
+  //make a call to Parse.readAll()
+
+  renderRoom: function(roomName, data) {
     //display messages for current room
-    console.log('this:', this);
-    RoomsView.$select.append('<div>' + roomName + '</div>');
-  },
+    let messagesForRoom = data.results.filter(message => message.hasOwnProperty('roomname') &&
+    message.roomname === roomName);
 
+    $('#chats').html('');
 
+    _.each(messagesForRoom, message => MessagesView.renderMessage(message));
+    // RoomsView.$select.append('<div>' + roomName + '</div>');
+  }
 };

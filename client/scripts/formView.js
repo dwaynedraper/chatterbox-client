@@ -15,9 +15,10 @@ var FormView = {
       text: $('#message').val(),
       roomname: $('#rooms select').val()
     };
-
-    Parse.create(message);
-    $('#message').val('');
+    if (message.text) {
+      Parse.create(message);
+      $('#message').val('');
+    }
   },
 
   setStatus: function(active) {
