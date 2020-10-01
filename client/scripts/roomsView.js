@@ -3,8 +3,6 @@ var RoomsView = {
   $button: $('#rooms button'),
   $select: $('#rooms select'),
 
-  //var rooms = _.uniq(_.pluck(data.results, 'roomname'))
-
   initialize: function() {
     RoomsView.$select.change(RoomsView.selectRoom);
     // this.$button.on('click', RoomsView.renderRoom);
