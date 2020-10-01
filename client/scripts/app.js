@@ -22,11 +22,14 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
+      var html = '';
+      var compiled = MessageView.render;
       for (let i = 0; i < data.results.length; i++) {
-        console.log('running');
-        console.log(data.results[i]);
-        MessagesView.renderMessage(data.results[i]);
+        if (data.results[i].username && data.results[i].text) {
+          html += compiled(data.results[i]);
+        }
       }
+      $('#chats').append(html);
       //RoomsView.renderRoom();
       callback();
     });

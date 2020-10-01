@@ -10,11 +10,12 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     //add real code here to send message to messageView/
-    // var message = {
-    //   username: 'shawndrost',
-    //   text: 'trololo',
-    //   roomname: '4chan'
-    // };
+    // var text = FormView.$form.find('input[type=text]').val();
+    var message = {
+      username: App.username,
+      text: $('#message').val(),
+      roomname: $('#rooms select').val()
+    };
     Parse.create(message);
     console.log('click!');
   },
