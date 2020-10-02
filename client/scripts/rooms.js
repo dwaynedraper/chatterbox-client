@@ -12,7 +12,7 @@ var Rooms = {
   addRoom: function(event) {
     event.preventDefault();
     let roomname = $('#roomNameText').val();
-    $('#rooms select').append("<option>" + _.escape(roomname) + "</option>");
+    $('#rooms select').append(Rooms.render({roomname: roomname}));
     $('#roomName input').val('');
   }
 
