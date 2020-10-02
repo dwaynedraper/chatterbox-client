@@ -4,10 +4,11 @@ var Friends = {
   $chats: $('#chats'),
 
   initialize: function() {
-    this.$chats.on('click', '.username', this.toggleStatus);
+    $('#chats').on('click', '.username', this.toggleStatus);
   },
 
   toggleStatus: function(event) {
+    $('.username').css({'cursor': 'pointer'});
     let userName = event.currentTarget.innerText;
     console.log('userName: ', userName);
     //this.friendList.push(username);

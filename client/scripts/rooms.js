@@ -7,7 +7,7 @@ var Rooms = {
     $('#roomName').on('submit', Rooms.addRoom);
   },
 
-  render: _.template(`<option> <%- roomname %> </option>`),
+  render: _.template('<option> <%- roomname %> </option>'),
 
   addRoom: function(event) {
     event.preventDefault();
