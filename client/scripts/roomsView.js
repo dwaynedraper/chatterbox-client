@@ -16,7 +16,9 @@ var RoomsView = {
 
   renderRoom: function(roomName, data) {
     //display messages for current room
-    let messagesForRoom = data.results.filter(message => message.hasOwnProperty('roomname') &&
+    let messagesForRoom = data.results.filter(
+      message => message.hasOwnProperty('roomname') &&
+    message.hasOwnProperty('username') &&
     message.roomname === roomName);
 
     $('#chats').html('');

@@ -5,6 +5,8 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
+    message.username = message.username || 'no username';
+    message.text = message.text || 'no message';
     $('#chats').append(MessageView.render(message));
   }
 
