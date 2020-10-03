@@ -15,6 +15,7 @@ var FormView = {
       text: $('#message').val(),
       roomname: $('#rooms select').val()
     };
+    console.log(message.username);
     if (message.text) {
       Parse.create(message);
       $('#message').val('');
