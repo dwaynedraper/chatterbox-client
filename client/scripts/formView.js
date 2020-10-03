@@ -11,7 +11,7 @@ var FormView = {
     event.preventDefault();
 
     var message = {
-      username: App.username,
+      username: _.unescape(App.username),
       text: $('#message').val(),
       roomname: $('#rooms select').val()
     };

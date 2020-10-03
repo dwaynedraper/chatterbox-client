@@ -5,11 +5,10 @@ var App = {
   username: 'anonymous',
 
   initialize: function() {
-    App.username = window.location.search.substr(10);
+    App.username = _.unescape(window.location.search.substr(10));
 
     FormView.initialize();
     RoomsView.initialize();
-    MessagesView.initialize();
     Friends.initialize();
     Rooms.initialize();
 

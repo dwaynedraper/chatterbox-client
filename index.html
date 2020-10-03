@@ -22,27 +22,31 @@
       }
     </script>
   </head>
-  <body>
-    <div id="main">
-      <h1>chatterbox</h1>
-      <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
-      <div id="rooms">
-        Room:
-        <select>
+  <body class="background">
+    <div class="top">
+      <div id="main">
+        <h1>chatterbox</h1>
+        <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
+        <div id="rooms">
+          Room:
+          <select class="select-box">
 
-        </select>
-        <form action="#" id="roomName" method="post">
-          <input type="text" name="roomNameText" id="roomNameText"/>
-          <!-- <input type="submit" name="submit" class="submit" value="Add Room"/> -->
-          <button>Add Room</button>
+          </select>
+          <form action="#" id="roomName" method="post">
+            <input type="text" name="roomNameText" id="roomNameText"/>
+            <!-- <input type="submit" name="submit" class="submit" value="Add Room"/> -->
+            <button>Add Room</button>
+          </form>
+        </div>
+        <form action="#" id="send" method="post">
+          <input type="text" name="message" id="message"/>
+          <input type="submit" name="submit" class="submit"/>
         </form>
       </div>
-      <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
-      </form>
     </div>
-    <div id="chats"></div>
+    <div class="bottom">
+      <div id="chats"></div>
+    </div>
     <script src="client/env/config.js"></script>
     <script src="client/scripts/parse.js"></script>
     <script src="client/scripts/rooms.js"></script>

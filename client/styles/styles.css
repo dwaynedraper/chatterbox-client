@@ -3,35 +3,53 @@ body {
     text-align: center;
     padding: 50px;
     font-family: arial, sans-serif;
+    box-sizing: border-box;
 }
 
-body {
+body.background {
     background-image:url('https://64.media.tumblr.com/167bafe644e9a2af464a7664e26b88f7/tumblr_ool545MQ4E1vcsrlfo1_1280.gifv');
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: auto;
+}
+
+div.top {
+    height: 30%;
+    display: flex;
+}
+div.bottom {
+    height: 70%;
+    display: flex;
 }
 
 #main, #chats {
     display: block;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     text-align: left;
     background: rgba(255, 255, 255, 0.5);
     padding: 50px 60px;
     border: solid #ddd;
     border-width: 0 1px 1px 1px;
+}
 
+#main {
+    margin-top: -50px;
 }
 
 #chats {
-    position: absolute;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+    position: relative;
+    /* margin-left: auto;
+    margin-right: auto; */
+    height: 700px;
     left: 0;
     right: 0;
     text-align: center;
-    overflow-y: auto;
+    overflow: auto;
+    /* width: 40%; */
 }
 
 #main h1 {
@@ -82,8 +100,10 @@ form input[type=text] {
 .chat {
 
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    height: auto;
     background-color: #eee;
+    overflow: auto;
 }
 
 .chat .username {
@@ -99,14 +119,14 @@ form input[type=text] {
 }
 .username:hover:after {
     content: "Add friend" ;
-    position: absolute ;
+    position: relative ;
     top: 1.1em ;
     left: 1em ;
     min-width: 200px ;
     border: 1px #808080 solid ;
     padding: 8px ;
     color: black ;
-    background-color: #cfc ;
+    background-color: #0090da;
     z-index: 1 ;
 }
 /* .username:hover:after {
@@ -138,7 +158,7 @@ input[type=submit] {
     outline: none;
     border: none;
     cursor: pointer;
-    position: relative;
+    position: absolute;
     padding: 10px 50px;
     margin: 0 auto;
     border-radius: 10px;

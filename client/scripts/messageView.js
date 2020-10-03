@@ -8,7 +8,7 @@ var MessageView = {
       </div>
 
     `)
-/* <div class="roomname"> <%= roomname %> </div> */
+/* <div class="rsoomname"> <%= roomname %> </div> */
 };
 
 
