@@ -70,6 +70,30 @@ form input[type=text] {
     font-weight: 800;
 }
 
+.username {
+    position: relative;
+}
+
+.username:hover {
+    cursor: pointer;
+}
+.username:hover:after {
+    content: "Add friend" ;
+    position: absolute ;
+    top: 1.1em ;
+    left: 1em ;
+    min-width: 200px ;
+    border: 1px #808080 solid ;
+    padding: 8px ;
+    color: black ;
+    background-color: #cfc ;
+    z-index: 1 ;
+}
+/* .username:hover:after {
+    content: attr(data-hover);
+    font-size: 10px;
+} */
+
 .chat:hover {
     background-color: #ddd;
 }

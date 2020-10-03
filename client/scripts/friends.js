@@ -4,15 +4,17 @@ var Friends = {
   $chats: $('#chats'),
 
   initialize: function() {
-    $('#chats').on('click', '.username', this.toggleStatus);
+    $('#chats').on('click', '.username', Friends.addFriend);
   },
 
-  toggleStatus: function(event) {
-    $('.username').css({'cursor': 'pointer'});
-    let userName = event.currentTarget.innerText;
-    console.log('userName: ', userName);
-    //this.friendList.push(username);
-    // this.$('#chats .username').html();
+  addFriend: function(event) {
+    event.preventDefault();
+    let username = event.currentTarget.innerText;
+    Friends.friendList.unshift(username);
+
+    _.each(Friends.friendList, (username) => {
+      $('div.' + username).addClass('friend');
+    });
   }
 
 };
